@@ -1,0 +1,71 @@
+# Entorno virtual
+.venv/
+venv/
+ENV/
+env/
+*.egg-info/
+dist/
+build/
+
+# Variables de entorno
+.env
+.env.local
+.env.*.local
+
+# Datos sensibles
+data/
+data/*
+!data/.gitkeep
+
+# Cache de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Tests y scripts de desarrollo
+*.test.py
+*_test.py
+test_*.py
+generate_report.py
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Reportes y PDFs generados
+*.pdf
+*.html
+!templates/*.html
+
+# Logs
+*.log
+
+# Sistema operativo
+Thumbs.db
+.DS_Store
+
+# Archivos temporales
+*.tmp
+.temp/
+temp/
+
+# Node (si se usa en el futuro)
+node_modules/
+npm-debug.log
+
+# Credenciales
+secrets/
+*.key
+*.pem
+credentials.json
