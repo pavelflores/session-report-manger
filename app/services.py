@@ -9,6 +9,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email import encoders
 import os
+import base64
 
 from typing import Optional
 
@@ -89,7 +90,17 @@ class ReportService:
 
     def render_report_html(self, student: Student, session: Session) -> str:
         template = self.env.get_template("report.html")
-        return template.render(student=student, session=session)
+        
+        # Get logo path and convert to base64 for WeasyPrint compatibility
+        logo_path = Path(__file__).resolve().parents[1] / "logo" / "vertical" / "mentis-vertical-tagline.png"
+        if logo_path.exists():
+            with open(logo_path, "rb") as f:
+                logo_data = base64.b64encode(f.read()).decode()
+            logo_src = f"data:image/png;base64,{logo_data}"
+        else:
+            logo_src = ""  # Fallback if logo not found
+        
+        return template.render(student=student, session=session, logo_path=logo_src)
 
     def generate_report(self, student: Student, session: Session) -> str:
         report_dir = Path(__file__).resolve().parents[1] / "data" / "students" / student.id / "reports"

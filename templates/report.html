@@ -24,35 +24,13 @@
       }
       .logo {
         text-align: center;
-        margin-bottom: 16px;
-        padding-bottom: 10px;
+        margin-bottom: 8px;
+        padding-bottom: 2px;
         border-bottom: 2px solid #a56bd6;
       }
-      .logo-main {
-        display: block;
-        font-size: 38px;
-        font-weight: 400;
-        letter-spacing: 0.7px;
-        color: #7b3f98;
-        line-height: 1;
-        margin-bottom: 4px;
-      }
-      .logo-secondary {
-        color: #111111;
-      }
-      .logo-sub {
-        display: block;
-        font-size: 10px;
-        font-weight: 400;
-        letter-spacing: 1.3px;
-        color: #9b67c7;
-        text-transform: uppercase;
-        line-height: 1.35;
-      }
-      .logo-dots {
-        color: #7b3f98;
-        font-weight: 700;
-        margin: 0 4px;
+      .logo img {
+        max-width: 140px;
+        height: auto;
       }
       .card {
         border: 1px solid #e7d9f7;
@@ -149,8 +127,7 @@
   <body>
     <div class="container">
       <div class="logo">
-        <span class="logo-main">M<span class="logo-secondary">entis</span></span>
-        <span class="logo-sub">Psicología<span class="logo-dots">·</span>Aprendizaje<span class="logo-dots">·</span>Desarrollo</span>
+        <img src="{{ logo_path }}" alt="Mentis" />
       </div>
       <div class="card">
         <div class="card-title">Información de la sesión</div>
