@@ -16,7 +16,7 @@ REPORT_SERVICE = ReportService(BASE_DIR / "templates")
 STUDENT_SERVICE = StudentService(REPO)
 SESSION_SERVICE = SessionService(REPO, REPORT_SERVICE)
 
-SENDER_EMAIL = os.getenv("SENDER_EMAIL", "994elizaflores.14@gmail.com")
+SENDER_EMAIL = os.getenv("SENDER_EMAIL", "")
 SENDER_PASSWORD = os.getenv("GMAIL_APP_PASSWORD", "")
 EMAIL_SERVICE = EmailService(SENDER_EMAIL, SENDER_PASSWORD) if SENDER_PASSWORD else None
 
